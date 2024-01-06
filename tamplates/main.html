@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<style>
+form{
+        margin: auto;
+        width: 35%;
+        color: #fff;
+        font-size:30px;
+    }
+
+.result{
+    margin: auto;
+    width: 50%;
+}
+
+</style>
+
+<head>
+    <title>
+        Прогнозирование показателя цвета B-V, m
+    </title>
+</head>
+
+<form action="{{url_for('main')}}" method="POST">
+    <fieldset>
+        <legend>Введите значение</legend>
+        Эффективная температура,К
+        <input name =  "experience" type="number"
+        required>
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+
+<div class="result" align="center">
+    {% if result %}
+    <br>
+    <p style="font-size:60px;color:#fff ">
+    Прогнозируемый показатель цвета B-V, m
+    </p>
+    <p style="font-size:70px;color:#fff "> {{result}} </p>
+    {% endif %}
+</div>
+
+ <style type="text/css">
+    body{
+        background-image: url(https://starcatalog.ru/images/2020/09/m31-3-1.jpg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+ </style>
